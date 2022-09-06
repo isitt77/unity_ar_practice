@@ -582,7 +582,7 @@ MonoBehaviour:
   objectToPlace: {fileID: 9063137284079327665, guid: 124a0c694d99148818655dc49b3b4a00,
     type: 3}
   raycastManager: {fileID: 388525033}
-  isUsingCursor: 1
+  isUsingCursor: 0
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0

@@ -23,7 +23,31 @@ public class AR_Cursor : MonoBehaviour
         {
             UpdateCursor();
         }
+
+        CheckInput();
     }
+
+
+    void CheckInput()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            if (isUsingCursor)
+            {
+                GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+            }
+            else
+            {
+                List<ARRaycastHit> hits = new List<ARRaycastHit>();
+                raycastManager.Raycast(Input.GetTouch(0).position, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
+                if (hits.Count > 0)
+                {
+                    GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+                }
+            }
+        }
+    }
+
 
     void UpdateCursor()
     {
