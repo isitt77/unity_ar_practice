@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 1418273199}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1475519705}
@@ -582,6 +582,7 @@ MonoBehaviour:
   objectToPlace: {fileID: 9063137284079327665, guid: 124a0c694d99148818655dc49b3b4a00,
     type: 3}
   raycastManager: {fileID: 388525033}
+  isUsingCursor: 1
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0
@@ -608,6 +609,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677412855707327187, guid: 124a0c694d99148818655dc49b3b4a00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677412855707327187, guid: 124a0c694d99148818655dc49b3b4a00,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677412855707327187, guid: 124a0c694d99148818655dc49b3b4a00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7677412855707327187, guid: 124a0c694d99148818655dc49b3b4a00,
         type: 3}
