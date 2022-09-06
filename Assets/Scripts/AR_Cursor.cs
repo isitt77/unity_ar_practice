@@ -8,6 +8,7 @@ public class AR_Cursor : MonoBehaviour
     [SerializeField] GameObject cursorChildObject;
     [SerializeField] GameObject objectToPlace;
     [SerializeField] ARRaycastManager raycastManager;
+    [SerializeField] ARSessionOrigin aRSessionOrigin;
 
     [SerializeField] bool isUsingCursor = true;
 
@@ -51,7 +52,8 @@ public class AR_Cursor : MonoBehaviour
 
     void UpdateCursor()
     {
-        Vector2 screenPos = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        Vector2 screenPos = aRSessionOrigin.camera.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        //Vector2 screenPos = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(screenPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
 
