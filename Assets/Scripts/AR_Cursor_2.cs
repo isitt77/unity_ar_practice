@@ -7,7 +7,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class AR_Cursor_2 : MonoBehaviour
 {
-    GameObject arCursor; 
+    [SerializeField] GameObject arCursor; 
     ARSessionOrigin arSessionOrigin;
     ARRaycastManager raycastManager;
     Pose placementPose;
@@ -18,7 +18,6 @@ public class AR_Cursor_2 : MonoBehaviour
     {
         arSessionOrigin = FindObjectOfType<ARSessionOrigin>();
         raycastManager = FindObjectOfType<ARRaycastManager>();
-        arCursor = FindObjectOfType<GameObject>();
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class AR_Cursor_2 : MonoBehaviour
 
     void UpdatePlacementPose()
     {
-        Vector2 screenCenter = Camera.current.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+        Vector3 screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
 
