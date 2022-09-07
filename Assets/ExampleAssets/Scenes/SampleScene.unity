@@ -542,7 +542,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475519705}
-  - component: {fileID: 1475519706}
   m_Layer: 0
   m_Name: AR Cursor
   m_TagString: Untagged
@@ -566,24 +565,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475519706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475519704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f002e40fb12b941a198edf772297475f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursorChildObject: {fileID: 1418273199}
-  objectToPlace: {fileID: 9063137284079327665, guid: 124a0c694d99148818655dc49b3b4a00,
-    type: 3}
-  raycastManager: {fileID: 388525033}
-  aRSessionOrigin: {fileID: 388525030}
-  isUsingCursor: 0
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0
