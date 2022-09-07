@@ -7,6 +7,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class AR_Cursor_2 : MonoBehaviour
 {
+    GameObject arCursor; 
     ARSessionOrigin arSessionOrigin;
     ARRaycastManager raycastManager;
     Pose placementPose;
@@ -17,11 +18,13 @@ public class AR_Cursor_2 : MonoBehaviour
     {
         arSessionOrigin = FindObjectOfType<ARSessionOrigin>();
         raycastManager = FindObjectOfType<ARRaycastManager>();
+        arCursor = FindObjectOfType<GameObject>();
     }
 
     void Update()
     {
         UpdatePlacementPose();
+        UpdatePlacementIndicator();
     }
 
 
@@ -36,6 +39,19 @@ public class AR_Cursor_2 : MonoBehaviour
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
+        }
+    }
+
+    void UpdatePlacementIndicator()
+    {
+        if (placementPoseIsValid)
+        {
+            arCursor.SetActive(true);
+            arCursor.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+        }
+        else
+        {
+            arCursor.SetActive(false);
         }
     }
 }
