@@ -29,7 +29,7 @@ public class AR_Cursor_2 : MonoBehaviour
 
     void UpdatePlacementPose()
     {
-        Vector3 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+        Vector3 screenCenter = arSessionOrigin.camera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         raycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
 
