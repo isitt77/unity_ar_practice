@@ -38,6 +38,10 @@ public class AR_Cursor_2 : MonoBehaviour
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
+
+            Vector3 cameraForward = arSessionOrigin.camera.transform.forward;
+            Vector3 cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
     }
 
