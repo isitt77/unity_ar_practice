@@ -7,7 +7,8 @@ using UnityEngine.XR.ARFoundation;
 
 public class AR_Cursor_2 : MonoBehaviour
 {
-    [SerializeField] GameObject arCursor; 
+    [SerializeField] GameObject objectToPlace;
+    [SerializeField] GameObject arCursor;
     ARSessionOrigin arSessionOrigin;
     ARRaycastManager raycastManager;
     Pose placementPose;
@@ -24,6 +25,18 @@ public class AR_Cursor_2 : MonoBehaviour
     {
         UpdatePlacementPose();
         UpdatePlacementIndicator();
+
+        // Checking plcament pose, finger touch, and first finger began touch...
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            PlaceObject();
+        }
+    }
+
+
+    void PlaceObject()
+    {
+        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
     }
 
 
